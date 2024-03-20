@@ -1,3 +1,4 @@
+Flask~=3.0.2
 reverse_geocoder~=1.5.1
 pycountry~=23.12.11
 exif~=1.6.0
