@@ -38,7 +38,7 @@ def draw_map_for_city(city):
 def check_if_exif(image):
     ret = True
     if image.has_exif:
-        status = f"contains EXIF (version {image.exif_version}) information."
+        status = f"contains EXIF (version {image.get("exif_version")}) information."
     else:
         status = "does not contain any EXIF information."
         ret = False

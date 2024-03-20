@@ -1,28 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <title>Photo locator</title>
-</head>
-<body>
-    <header class="text-white text-center">
-        <h1 class="display-4">Photo locator</h1>
-        <p class="lead mb-0">Locate where your image has been taken</p>
-        <p/>
-        <p/>
-        <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="100" class="mb-4">
-    </header>
-
-    <div class="text-white text-center">
-        <h3>Your image has been taken in:</h3>
-        <h2>{{ answer }}</h2>
-        <br><br>
-        <button class="btn rounded-pill btn-outline-light btn-lg" onclick="utils.draw_map_for_city({{answer}})" type="submit">View in Maps</button>
-        <a href="javascript:history.back()" class="btn rounded-pill btn-outline-light btn-lg">Back</a>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-white text-center">
+    <h3>Your image has been taken in:</h3>
+    <h2>{{ answer }}</h2>
+    <br><br>
+    <button class="btn rounded-pill btn-outline-light btn-lg" onclick="utils.draw_map_for_city({{answer}})"
+            type="submit">View in Maps
+    </button>
+    <a href="javascript:history.back()" class="btn rounded-pill btn-outline-light btn-lg">Back</a>
+</div>
+{% endblock %}
