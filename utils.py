@@ -38,7 +38,7 @@ def draw_map_for_city(city):
 def check_if_exif(image):
     ret = True
     if image.has_exif:
-        status = f"contains EXIF (version {image.get("exif_version")}) information."
+        status = f"contains EXIF (version {image.get('exif_version')}) information."
     else:
         status = "does not contain any EXIF information."
         ret = False
@@ -72,6 +72,7 @@ def display_details(image):
     print(f"Date/time taken")
     print("-------------------------")
     print(f"{image.datetime_original}.{image.subsec_time_original} {image.get('offset_time', '')}\n")
+    return image_member_list
 
 
 # if __name__ == '__main__':
