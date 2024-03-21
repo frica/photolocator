@@ -15,13 +15,17 @@
                 </div>
             </div>
             <div class="text-white text-center">
-                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="locate">Locate</button>
-                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="about">About</button>
-                <br/>
-                <br/>
+                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="locate">
+                    Locate
+                </button>
+                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="about">
+                    About
+                </button>
+            </div>
+            <div class="text-white text-center">
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
-
+                <br/>
                 {% for message in messages %}
                 <strong>Error: {{ message }}</strong>
                 {% endfor %}
@@ -32,10 +36,8 @@
             <br>
         </form>
         <!-- Uploaded image area-->
-        <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
         <div class="image-area mt-4"><img id="imageResult" src="#" alt=""
                                           class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-
     </div>
 </div>
 {% endblock %}
