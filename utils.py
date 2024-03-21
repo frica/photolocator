@@ -67,7 +67,7 @@ def display_details(image):
     #print(f"Device information - Image {image.name}")
     print(f"Device information")
     print("----------------------------")
-    print(f"Make: {image.make}")
+    print(f"Make: {image.get('make')}")
     print(f"Model: {image.model}\n")
     print(f"Date/time taken")
     print("-------------------------")
