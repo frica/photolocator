@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-white text-center">
+    <h3>Your camera model is: {{ model }}</h3>
+    <p>Your image contains {{ image_member_list.__sizeof__() }} EXIF tags including: </p>
+</div>
+<table class="styled-table">
+    <tr>
+      <th>tag</th>
+      <th>value</th>
+    </tr>
+    {% for a in array %}
+    <tr>
+      <td>{{ a }}</td>
+      <td>{{ image.get(a) }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,3 +1,9 @@
+body {
+    min-height: 100vh;
+    background-color: #757f9a;
+    background-image: linear-gradient(147deg, #757f9a 0%, #d7dde8 100%);
+}
+
 #upload {
     opacity: 0;
 }
@@ -33,18 +39,28 @@
     position: relative;
 }
 
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSES
-* ==========================================
-*
-*/
-body {
-    min-height: 100vh;
-    background-color: #757f9a;
-    background-image: linear-gradient(147deg, #757f9a 0%, #d7dde8 100%);
+/* Table styling */
+
+.styled-table {
+    margin: auto;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    max-width: 400px;
+    border: 1px solid #dddddd;
+    background-color: #8d96ad;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+.styled-table thead tr {
+    font-weight: bold;
+    background-color: #009879;
+    color: white;
+    text-align: left;
+}
 
-/*
+.styled-table tbody tr {
+    border: 1px solid #dddddd;
+    color: white;
+}
+

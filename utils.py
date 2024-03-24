@@ -1,7 +1,4 @@
-from exif import Image
 import webbrowser
-import reverse_geocoder as rg
-import pycountry
 
 # See https://auth0.com/blog/read-edit-exif-metadata-in-photos-with-python/
 
@@ -63,13 +60,11 @@ def display_details(image):
     nb_exif_tags = image_member_list.__sizeof__()
     print(f"Image contains {nb_exif_tags} members:")
     print(f"{image_members}\n")
-    # crash avec photo lolo
-    #print(f"Device information - Image {image.name}")
-    print(f"Device information")
+    print("Device information")
     print("----------------------------")
     print(f"Make: {image.get('make')}")
     print(f"Model: {image.model}\n")
-    print(f"Date/time taken")
+    print("Date/time taken")
     print("-------------------------")
     print(f"{image.datetime_original}.{image.subsec_time_original} {image.get('offset_time', '')}\n")
     return image_member_list
