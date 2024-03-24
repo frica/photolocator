@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="text-white text-center">
-    <h3>Your image has been taken in:</h3>
-    <h2>{{ answer }}</h2>
-    <br><br>
-    <button class="btn rounded-pill btn-outline-light btn-lg" onclick="utils.draw_map_for_city({{answer}})"
-            type="submit">View in Maps
-    </button>
+    <h4>Your image has been taken in:</h4>
+    <h3>{{ answer }}</h3>
+    <br>
+    <div id="map"></div>
+    <br>
     <a href="javascript:history.back()" class="btn rounded-pill btn-outline-light btn-lg">Back</a>
 </div>
 {% endblock %}

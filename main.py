@@ -60,7 +60,8 @@ def locate():
             print(f"You were in {location_info['name']}, {location_info['country'].name}!")
             answer = f"{location_info['name']}, {location_info['country'].name}"
             app.logger.info(f"Location: {answer}")
-            return render_template("locate.html", answer=answer)
+            return render_template("locate.html", answer=answer,
+                                   lat=decimal_latitude, lon=decimal_longitude)
         elif request.form["action"] == "details":
             image_members = dir(image)
 
