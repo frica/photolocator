@@ -16,7 +16,7 @@ A Flask page where you can upload a photo and get the location (city, country) f
 
 * Python exif library
 * Flask
-* LeafletJS :ua: :heart:
+* LeafletJS :heart: 🇺🇦
 
 ### Sources
 Project inspired by these great articles: 
