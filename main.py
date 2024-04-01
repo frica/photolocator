@@ -1,8 +1,11 @@
+import datetime
 from logging.config import dictConfig
 import pycountry
 import reverse_geocoder as rg
 from exif import Image
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, jsonify
+import config
+import json
 import utils
 
 # Settings to get similar output as Flask werkzeug logs
@@ -30,6 +33,28 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 @app.route('/')
 def hello():
     return render_template("index.html")
+
+
+@app.route("/version", methods=["GET"], strict_slashes=False)
+def version():
+    response_body = {
+        "success": 1,
+    }
+    return jsonify(response_body)
+
+
+@app.after_request
+def after_request(response):
+    if response and response.get_json():
+        data = response.get_json()
+
+        # isoformat to be able to serialize with json
+        data["time_request"] = datetime.datetime.now(datetime.UTC).isoformat()
+        data["version"] = config.VERSION
+
+        response.set_data(json.dumps(data))
+
+    return response
 
 
 @app.route("/details", methods=["POST"])
