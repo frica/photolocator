@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row py-4">
+<div class="row py-4 px-2">
     <div class="col-lg-4 mx-auto">
         <form action="/locate" enctype="multipart/form-data" method="post" id="form">
             <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
                 <input id="upload" type="file" onchange="readURL(this);" name="image"
                        accept=".jpg, .png, .bmp, .eps, .gif, .im, .msp, .pcx, .ppm, .tiff" class="form-control border-0"
                        multiple>
-                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose...</label>
                 <div class="input-group-append">
                     <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i
                             class="fa fa-cloud-upload mr-2 text-muted"></i><small
