@@ -12,9 +12,9 @@ A simple web application written with Flask where you can upload a photo and get
 
 ### Uses
 
-* Python exif library
-* Flask
-* LeafletJS :heart: 🇺🇦
+* [exif](https://exif.readthedocs.io/en/latest/usage.html) library
+* [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+* [LeafletJS](https://leafletjs.com/) :heart: 🇺🇦
 
 ### Run with Docker
 
