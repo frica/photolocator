@@ -2,9 +2,6 @@ import logging
 import webbrowser
 
 
-# See https://auth0.com/blog/read-edit-exif-metadata-in-photos-with-python/
-
-
 def format_dms_coordinates(coordinates):
     return f"{coordinates[0]}°{coordinates[1]}\'{coordinates[2]}\""
 
@@ -27,7 +24,7 @@ def draw_map_for_location(latitude, latitude_ref, longitude, longitude_ref):
     webbrowser.open_new_tab(url)
 
 
-def check_if_exif(image):
+def check_if_exif(image) -> bool:
     """ Check if image has exif tags """
     ret = True
     if image.has_exif:
@@ -54,3 +51,21 @@ def display_details(image):
     print("-------------------------")
     print(f"{image.datetime_original}.{image.subsec_time_original} {image.get('offset_time', '')}\n")
     return image_member_list
+
+
+def format_camera_model(image) -> str:
+    # just to get a cleaner output in case the camera model is not capitalized
+    camera_model = image.model.capitalize()
+    return camera_model
+
+
+def filter_out_tags(image):
+    image_members = dir(image)
+    # remove from the list tags with bytes values like _interoperability_ifd_Pointer
+    image_members[:] = (tags for tags in image_members if
+                        (not tags.startswith("_")) and
+                        (not tags.startswith("get")) and
+                        (not tags.startswith("delete")) and
+                        (not tags.startswith("list_all")))
+    # app.logger.debug(image_members)
+    return image_members
