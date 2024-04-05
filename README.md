@@ -30,5 +30,6 @@ Project inspired by these great articles:
 * https://auth0.com/blog/read-edit-exif-metadata-in-photos-with-python/
 * https://dev.to/feranmiodugbemi/image-conversion-web-app-with-python-1e18
 * https://medium.com/google-cloud/deploy-a-python-flask-server-using-google-cloud-run-d47f728cc864
+* https://medium.com/@dassandrew3/how-to-send-html-form-data-to-pythons-microframework-flask-29a674716b30
 
 
