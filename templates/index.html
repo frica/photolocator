@@ -2,7 +2,7 @@
 {% block content %}
 <div class="row py-4 px-2">
     <div class="col-lg-4 mx-auto">
-        <form action="/locate" enctype="multipart/form-data" method="post" id="form">
+        <form enctype="multipart/form-data" method="post" id="form">
             <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
                 <input id="upload" type="file" onchange="readURL(this);" name="image"
                        accept=".jpg, .png, .bmp, .eps, .gif, .im, .msp, .pcx, .ppm, .tiff" class="form-control border-0"
@@ -15,10 +15,10 @@
                 </div>
             </div>
             <div class="text-white text-center">
-                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="locate">
+                <button type="submit" formaction={{url_for('locate')}} class="btn rounded-pill btn-outline-light btn-lg">
                     Locate
                 </button>
-                <button type="submit" class="btn rounded-pill btn-outline-light btn-lg" name="action" value="details">
+                <button type="submit" formaction={{url_for('details')}} class="btn rounded-pill btn-outline-light btn-lg">
                     Details
                 </button>
             </div>
