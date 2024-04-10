@@ -36,9 +36,9 @@ def check_if_exif(image) -> bool:
     return ret
 
 
-def format_camera_model(image) -> str:
+def format_camera_model(model_tag) -> str:
     """ Capitalize camera model for cleaner output """
-    return image.model.capitalize()
+    return model_tag.strip().capitalize()
 
 
 def filter_out_tags(image) -> list:

@@ -98,7 +98,7 @@ def details():
         return redirect("/")
 
     image_members = utils.filter_out_tags(image)
-    camera_model = utils.format_camera_model(image)
+    camera_model = utils.format_camera_model(image.model)
     return render_template("details.html", array=image_members, model=camera_model, image=image)
 
 
